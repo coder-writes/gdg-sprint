@@ -4,7 +4,7 @@
 
 ![CodeCrux](img/img.png)
 
-[🚀 Live Demo](https://code-crux-ten.vercel.app) • [📖 API Backend](https://codecrux1.onrender.com) • [📚 Documentation](#getting-started)
+[🚀 Live Demo](https://codecrux.shobhitsri.me) • [📖 API Backend](https://codecrux1.onrender.com) • [📚 Documentation](#getting-started)
 
 </div>
 
