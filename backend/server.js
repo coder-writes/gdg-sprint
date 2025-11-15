@@ -21,9 +21,9 @@ connectDB();
 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://code-crux-ten.vercel.app',
-  'http://codecrux.aashutosh585.me',
   'https://gdg-sprint.onrender.com',
+  'https://gdg-sprint-puce.vercel.app/',
+  'https://codecrux.shobhitsri.me',
 ];
 
 app.use(express.json());

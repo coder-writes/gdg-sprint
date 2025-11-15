@@ -4,7 +4,7 @@
 
 ![CodeCrux](img/img.png)
 
-[🚀 Live Demo](https://code-crux-ten.vercel.app) • [📖 API Backend](https://codecrux1.onrender.com) • [📚 Documentation](#getting-started) • [🤝 Contributing](#contributing)
+[🚀 Live Demo](https://code-crux-ten.vercel.app) • [📖 API Backend](https://codecrux1.onrender.com) • [📚 Documentation](#getting-started)
 
 </div>
 
@@ -12,7 +12,9 @@
 
 ## 🌟 About
 
-CodeCrux is a **full-stack DSA learning platform** designed for coding interview preparation. It features **AI-powered mentorship**, **dynamic content management**, **progress tracking**, and **admin-controlled data**. Built with modern MERN stack architecture and Google Gemini AI integration.
+CodeCrux is a **full-stack DSA learning platform** designed for coding interview preparation. It features **AI-powered mentorship**, **comprehensive AI developer tools**, **dynamic content management**, **progress tracking**, and **admin-controlled data**. Built with modern MERN stack architecture and Google Gemini AI integration.
+
+**This project was developed for the GDG 7 Hours Hackathon, Prayagraj.**
 
 ## ✨ Features
 
@@ -20,7 +22,7 @@ CodeCrux is a **full-stack DSA learning platform** designed for coding interview
 - **Admin Dashboard** - Full CRUD operations for sheets and tutorials
 - **Database-Driven** - All content stored in MongoDB with real-time updates
 - **Progress Tracking** - ObjectId relationships for user completion status
-- **Role-Based Access** - Admin-only content management (ashutoshmaurya585@gmail.com)
+- **Role-Based Access** - Admin-only content management (designated admin account)
 
 **📚 Learning Resources**
 - **Popular DSA Sheets** - Striver's SDE, Love Babbar 450, NeetCode 150, Blind 75, etc.
@@ -287,12 +289,12 @@ GET    /tutorials         # Get all published video tutorials
 ### 🔧 Admin Features
 **Admin Dashboard** (`AdminDashboard.jsx`)
 - **Content Management**: Full CRUD operations for sheets and tutorials
-- **Role-Based Access**: Only `ashutoshmaurya585@gmail.com` can access admin panel
+- **Role-Based Access**: Only designated admin account(s) can access admin panel
 - **Real-time Updates**: Changes reflect immediately across the platform
 - **Data Validation**: Form validation with error handling and success notifications
 
 **Access Method**: 
-- Login with admin email → Go to Profile → Click "Admin Dashboard" button
+- Login with admin account → Go to Profile → Click "Admin Dashboard" button
 
 ### 🤖 AI Integration
 **AI Mentor System** (`MentorAI.jsx` + `useAIMentor.js`)
@@ -322,9 +324,7 @@ GET    /tutorials         # Get all published video tutorials
 npm run dev        # Start Vite development server (http://localhost:5173)
 npm run build      # Build optimized production bundle
 npm run preview    # Preview production build locally
-npm run lint       # Run ESLint code analysis
-```
-
+npm run lint       #
 **Backend (CodeCrux Server)**
 ```bash
 npm start          # Start production server
@@ -409,12 +409,12 @@ db.users.findOne({email: "admin@example.com"}) # Find specific user
 
 ## 🤝 Contributing
 
-We welcome contributions! Please follow these steps:
+Contributions are welcome! Please follow these steps:
 
 1. **Fork the Repository**
 ```bash
-git clone https://github.com/your-username/CodeCrux.git
-cd CodeCrux
+git clone https://github.com/your-username/gdg-sprint.git
+cd gdg-sprint
 ```
 
 2. **Create Feature Branch**
@@ -455,13 +455,13 @@ git push origin feature/your-feature-name
 - 📚 **Content**: More DSA sheets, tutorial curation
 - 🐛 **Bug Fixes**: Performance optimizations, error handling
 
-## 👨‍💻 Author & Maintainer
+## 🏆 Hackathon Project
 
-**Ashutosh Maurya**
-- 🌐 GitHub: [@aashutosh585](https://github.com/aashutosh585)
-- 📧 Email: ashutoshmaurya585@gmail.com  
-- 💼 LinkedIn: [Connect with me](https://linkedin.com/in/aashutosh585)
-- 🐦 Twitter: [@aashutosh585](https://twitter.com/aashutosh585)
+**GDG 7 Hours Hackathon, Prayagraj**
+- 🎯 Built in 7 hours sprint
+- 🚀 Full-stack MERN application with AI integration
+- 🤖 Powered by Google Gemini AI
+- 🎓 Focused on DSA learning and interview preparation
 
 ## 🎉 Acknowledgments & Credits
 
@@ -493,11 +493,9 @@ git push origin feature/your-feature-name
 
 ---
 
-**🚀 Built with passion for the coding community**
+**🚀 Built for GDG 7 Hours Hackathon, Prayagraj**
 
-[⭐ Star this repo](https://github.com/aashutosh585/CodeCrux) • [🐛 Report Issues](https://github.com/aashutosh585/CodeCrux/issues) • [💡 Request Features](https://github.com/aashutosh585/CodeCrux/issues) • [📖 Documentation](codecrux-server/API_DOCUMENTATION.md)
-
-**Made with ❤️ in India 🇮🇳**
+**Powered by Google Gemini AI • Built with MERN Stack • Made with ❤️ in India 🇮🇳**
 
 </div>
 </content>
