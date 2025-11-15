@@ -1,6 +1,9 @@
 // src/App.jsx
 import { Routes, Route, Outlet } from 'react-router'
 import { DarkModeProvider } from './contexts/DarkModeContext.jsx'
+import { SocketProvider } from './contexts/SocketContext.jsx'
+import { AppContent } from './contexts/AppContext.jsx'
+import { useContext } from 'react'
 import Home from './pages/Home.jsx'
 import Layout from './pages/Layout.jsx'
 import Dashboard from './components/Dashboard.jsx'
@@ -13,30 +16,42 @@ import EmailVerify from './pages/EmailVerify.jsx'
 import ResetPassword from './pages/ResetPassword.jsx'
 import Profile from './pages/Profile.jsx'
 import AdminDashboard from './pages/AdminDashboard.jsx'
+import AIDevTools from './pages/AIDevTools.jsx'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+
+const AppRoutes = () => {
+  const { backendUrl } = useContext(AppContent);
+  
+  return (
+    <SocketProvider backendUrl={backendUrl}>
+      <Routes>
+        {/* Public routes */}
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/email-verify" element={<EmailVerify />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+
+        {/* Protected/app routes */}
+        <Route element={<Layout><Outlet /></Layout>}>
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="mentor-ai" element={<MentorAI />} />
+          <Route path="roadmap" element={<RoadMap />} />
+          <Route path="sheet" element={<Sheet />} />
+          <Route path="tutorials" element={<Tutorials />} />
+          <Route path="profile" element={<Profile />} />
+          <Route path="admin" element={<AdminDashboard />} />
+          <Route path="ai-tools" element={<AIDevTools />} />
+        </Route>
+      </Routes>
+    </SocketProvider>
+  );
+};
 
 const App = () => (
   <DarkModeProvider>
     <ToastContainer />
-    <Routes>
-      {/* Public routes */}
-      <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/email-verify" element={<EmailVerify />} />
-      <Route path="/reset-password" element={<ResetPassword />} />
-
-      {/* Protected/app routes */}
-      <Route element={<Layout><Outlet /></Layout>}>
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="mentor-ai" element={<MentorAI />} />
-        <Route path="roadmap" element={<RoadMap />} />
-        <Route path="sheet" element={<Sheet />} />
-        <Route path="tutorials" element={<Tutorials />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="admin" element={<AdminDashboard />} />
-      </Route>
-    </Routes>
+    <AppRoutes />
   </DarkModeProvider>
 )
 

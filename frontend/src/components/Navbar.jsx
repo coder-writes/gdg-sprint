@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { useNavigate } from 'react-router'
 import { useDarkMode } from '../contexts/DarkModeContext.jsx'
 import { AppContent } from '../contexts/AppContext.jsx'
-import { Code, Sparkles } from 'lucide-react'
+import { Code, Sparkles, Bot } from 'lucide-react'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 
@@ -57,6 +57,19 @@ const Navbar = () => {
 
           {/* Right side */}
           <div className="flex items-center space-x-4">
+            {/* AI Tools Button */}
+            <button
+              onClick={() => navigate('/ai-tools')}
+              className={`flex items-center gap-2 px-4 py-2 rounded-xl font-semibold transition-all duration-200 ${
+                isDarkMode 
+                  ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40' 
+                  : 'bg-gradient-to-r from-blue-500 to-purple-500 text-white hover:from-blue-600 hover:to-purple-600 shadow-lg shadow-blue-400/30 hover:shadow-blue-400/50'
+              } hover:scale-105`}
+            >
+              <Bot className="w-5 h-5" />
+              <span>AI Tools</span>
+            </button>
+
             <button
               onClick={toggleDarkMode}
               className={`p-2 rounded-xl ${isDarkMode ? 'bg-gray-800/60 text-white hover:bg-gray-700/60' : 'bg-gray-100/60 text-gray-900 hover:bg-gray-200/60'} backdrop-blur-sm hover:scale-105 transition-all duration-200 shadow-lg shadow-black/5`}

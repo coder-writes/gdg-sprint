@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router'
 import { useDarkMode } from '../contexts/DarkModeContext.jsx'
-import { Play, ArrowRight } from 'lucide-react'
+import { Play, ArrowRight, Bot } from 'lucide-react'
 import MentorAIImage from '../assets/MentorAI.jpg'
 
 const Hero = () => {
@@ -45,13 +45,21 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-3 mb-8">
               <button
                 onClick={() => navigate('/dashboard')}
-                className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-3 rounded-lg hover:from-green-700 hover:to-emerald-700 transition-all duration-200 font-medium text-base flex items-center space-x-2 group shadow-lg shadow-green-500/20 hover:shadow-green-500/30 hover:scale-[1.02]"
+                className="bg-gradient-to-r from-green-600 to-emerald-600 text-white px-6 py-3 rounded-lg hover:from-green-700 hover:to-emerald-700 transition-all duration-200 font-medium text-base flex items-center justify-center space-x-2 group shadow-lg shadow-green-500/20 hover:shadow-green-500/30 hover:scale-[1.02]"
               >
                 <span>Get Started Free</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
               
-              <button className={`${isDarkMode ? 'bg-gray-800/60 text-white border-gray-700/50' : 'bg-white/60 text-gray-900 border-gray-200/50'} backdrop-blur-sm border px-6 py-3 rounded-lg hover:scale-[1.02] transition-all duration-200 font-medium text-base flex items-center space-x-2 shadow-md hover:shadow-lg`}>
+              <button
+                onClick={() => navigate('/ai-tools')}
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 font-medium text-base flex items-center justify-center space-x-2 group shadow-lg shadow-blue-500/20 hover:shadow-blue-500/30 hover:scale-[1.02]"
+              >
+                <Bot className="w-4 h-4" />
+                <span>AI Dev Tools</span>
+              </button>
+              
+              <button className={`${isDarkMode ? 'bg-gray-800/60 text-white border-gray-700/50' : 'bg-white/60 text-gray-900 border-gray-200/50'} backdrop-blur-sm border px-6 py-3 rounded-lg hover:scale-[1.02] transition-all duration-200 font-medium text-base flex items-center justify-center space-x-2 shadow-md hover:shadow-lg`}>
                 <Play className="w-4 h-4" />
                 <span>Watch Demo</span>
               </button>
